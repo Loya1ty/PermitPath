@@ -9,7 +9,7 @@ This is a prospective-customer demo, not production permitting software. It uses
 Requires **Node.js 24 or later**. There are **no package dependencies or installation steps**.
 
 ```powershell
-cd C:\Users\niclinga\source\repos\PermitPath
+cd ..PermitPath
 npm run dev
 ```
 
@@ -125,20 +125,6 @@ npm run test:e2e
 The completed implementation was checked with the commands above. Browser automation was exercised in installed Chromium-based Edge; Safari, Firefox, screen-reader behavior and actual agency acceptance are not certified. The mobile check emulates a viewport, not a physical phone. Native print/PDF behavior depends on the user's browser and operating system. No automated WCAG conformance claim is made.
 
 The bounded independent visual review found no material blocker in the captured desktop/mobile dashboard and editor views. Below-fold mobile content and the checks screenshots were not independently visually verified; functional and overflow checks did cover those routes.
-
-## Deploy to GitHub Pages
-
-**Deployment is prepared, not deployed. No Git repository or remote was created for this folder.**
-
-1. With the user's approval, create or choose the intended GitHub repository and connect this folder. Do not commit `test-results` or other ignored local artifacts.
-2. Commit the source files, including `.github/workflows/pages.yml`, to its `main` branch. If the repository uses a different default branch, update the workflow trigger to that actual branch.
-3. In the repository's **Settings -> Pages -> Build and deployment**, select **GitHub Actions** as the source. Ensure repository/organization policy permits Pages.
-4. Push to `main`, or run **Deploy static demo to GitHub Pages** manually from Actions.
-5. The workflow runs the dependency-free model tests and static build, uploads only `dist`, then deploys it through the Pages environment. Its deployment step reports the actual Pages URL. It does not run the browser suite on hosted runners; run that locally before publishing.
-
-Assets use relative URLs and navigation uses hashes, so no repository name or domain is hardcoded into the build. A repository deployment such as `https://OWNER.github.io/REPOSITORY/#/project/deck/plan` works without a server rewrite. The local `/PermitPath/` alias exercises that condition. A generated `404.html` is a convenience fallback; supported deep links use the hash, not path-style URLs.
-
-GitHub repository/Pages availability, visibility, usage limits and costs depend on the chosen account and plan. The demo itself requires no additional compute services, database, secrets or API keys.
 
 ## Source layout
 
