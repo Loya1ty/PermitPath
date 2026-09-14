@@ -1,0 +1,13 @@
+{
+  "name": "permitpath-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs --dist",
+    "test": "node --test tests/model.test.mjs",
+    "test:e2e": "node --test tests/browser.test.mjs"
+  }
+}

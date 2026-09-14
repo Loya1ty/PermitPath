@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-14T02:33:57.733Z",
+  "title": "Design System: PermitPath",
+  "extensions": {
+    "colorMeta": {
+      "navy": { "role": "secondary", "displayName": "Workspace navy" },
+      "teal": { "role": "primary", "displayName": "Action teal" },
+      "teal-dark": { "role": "primary", "displayName": "Deep teal" },
+      "mint": { "role": "secondary", "displayName": "Navigation mint" },
+      "paper": { "role": "neutral", "displayName": "Paper" },
+      "white": { "role": "neutral", "displayName": "White" },
+      "ink": { "role": "neutral", "displayName": "Ink" },
+      "muted": { "role": "neutral", "displayName": "Muted ink" },
+      "line": { "role": "neutral", "displayName": "Divider" },
+      "wash": { "role": "neutral", "displayName": "Wash" },
+      "success": { "displayName": "Satisfied" },
+      "issue": { "displayName": "Issue" },
+      "review": { "displayName": "Review" }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "Default page heading; project and mobile variants are documented in DESIGN.md." },
+      "title": { "displayName": "Title", "purpose": "Default second-level heading." },
+      "body": { "displayName": "Body", "purpose": "Root system stack and reading baseline." }
+    },
+    "shadows": [
+      { "name": "selected-strategy", "value": "inset 0 2px 0 var(--teal)", "purpose": "Selection accent, not ambient elevation." },
+      { "name": "mobile-active-navigation", "value": "inset 0 -2px 0 var(--mint)", "purpose": "Active destination underline on the mobile navy header." }
+    ],
+    "motion": [
+      { "name": "button-state", "value": "background-color 160ms ease-out, border-color 160ms ease-out", "purpose": "Button color transitions; removed under prefers-reduced-motion: reduce." }
+    ],
+    "breakpoints": [
+      { "name": "wide-min", "value": "1550px" },
+      { "name": "compact-desktop-max", "value": "1180px" },
+      { "name": "icon-rail-max", "value": "950px" },
+      { "name": "mobile-header-max", "value": "740px" },
+      { "name": "single-card-max", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The teal next-step or export action.",
+      "html": "<button class=\"ds-primary\">Review scoped checks</button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:10px 17px;border:1px solid transparent;border-radius:5px;font:600 13.125px/1.4 'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:var(--teal,#007f7a);color:white;cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-primary:hover{background:var(--teal-dark,#00645f)}.ds-primary:focus-visible{outline:3px solid #1a78bb;outline-offset:4px}.ds-primary:active{filter:brightness(.93)}.ds-primary:disabled{color:#586b78;background:#e4eaee;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Bordered supporting action.",
+      "html": "<button class=\"ds-secondary\">Adjust project inputs</button>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:10px 17px;border:1px solid #c2d0d9;border-radius:5px;font:600 13.125px/1.4 'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:white;color:var(--ink,#16324b);cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-secondary:hover{background:var(--wash,#edf3f5);border-color:#7f98a8}.ds-secondary:focus-visible{outline:3px solid #1a78bb;outline-offset:4px}.ds-secondary:active{filter:brightness(.93)}.ds-secondary:disabled{color:#586b78;background:#e4eaee;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}"
+    },
+    {
+      "name": "Quiet button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Low-emphasis sample action.",
+      "html": "<button class=\"ds-quiet\">Reset sample</button>",
+      "css": ".ds-quiet{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 8px;border:1px solid transparent;border-radius:5px;font:600 13.125px/1.4 'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:transparent;color:var(--muted,#536777);cursor:pointer;transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-quiet:hover{color:var(--ink,#16324b);background:var(--wash,#edf3f5)}.ds-quiet:focus-visible{outline:3px solid #1a78bb;outline-offset:4px}.ds-quiet:active{filter:brightness(.93)}.ds-quiet:disabled{color:#586b78;background:#e4eaee;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-quiet{transition:none}}"
+    },
+    {
+      "name": "Number field with error",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Above-field label, associated hint/error and explicit invalid treatment.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-width\">Width <span>(ft)</span></label><input id=\"ds-width\" type=\"number\" inputmode=\"decimal\" aria-invalid=\"true\" aria-describedby=\"ds-hint ds-error\"><small id=\"ds-hint\">Dimensions are in U.S. customary units.</small><span class=\"ds-error\" id=\"ds-error\">Enter a valid dimension.</span></div>",
+      "css": ".ds-field{font:15px/1.55 'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--ink,#16324b)}.ds-field label{display:block;font-weight:600;font-size:12px;margin-bottom:6px}.ds-field label span{font-weight:400;color:var(--muted,#536777)}.ds-field input{font:inherit;width:100%;min-height:42px;padding:9px 10px;border:1px solid #b6c8d4;border-radius:4px;color:var(--ink,#16324b);background:white}.ds-field input[aria-invalid=true]{border-color:#ab4b36;background:#fff9f7}.ds-field input:focus-visible{outline:3px solid #1a78bb;outline-offset:4px}.ds-field small{display:block;color:var(--muted,#536777);font-size:10.8px;margin-top:6px;line-height:1.4}.ds-error{display:block;color:var(--issue,#9b3c24);font-size:11.25px;margin-top:5px}"
+    },
+    {
+      "name": "Walkthrough navigation",
+      "kind": "nav",
+      "description": "Numbered navigation links, not ARIA tabs; scroll on mobile.",
+      "html": "<nav class=\"ds-steps\" aria-label=\"Project walkthrough\"><a href=\"#/project/deck/brief\"><span>1</span>Project brief</a><a href=\"#/project/deck/plan\" aria-current=\"step\"><span>2</span>Edit diagram</a></nav>",
+      "css": ".ds-steps{display:flex;gap:18px;border-bottom:1px solid #beced9;font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif}.ds-steps a{display:flex;align-items:center;gap:8px;padding:12px 0 16px;color:var(--muted,#536777);font-size:12.15px;line-height:1.55;text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}.ds-steps a span{display:grid;place-items:center;width:22px;height:22px;border:1px solid #c7d4de;border-radius:50%;font-size:10.5px}.ds-steps a:hover{color:var(--teal-dark,#00645f)}.ds-steps a[aria-current]{color:var(--teal-dark,#00645f);border-bottom-color:var(--teal,#007f7a);font-weight:650}.ds-steps a[aria-current] span{color:white;background:var(--teal,#007f7a);border-color:var(--teal,#007f7a)}.ds-steps a:focus-visible{outline:3px solid #1a78bb;outline-offset:4px}@media(max-width:1180px){.ds-steps{gap:14px}.ds-steps a{font-size:11.1px;gap:6px}}@media(max-width:740px){.ds-steps{overflow-x:auto;gap:20px;padding:0 2px}.ds-steps a{font-size:12px;padding-top:10px}}"
+    },
+    {
+      "name": "Review status",
+      "kind": "chip",
+      "refersTo": "badge-review",
+      "description": "A noninteractive status with text and a question mark.",
+      "html": "<span class=\"ds-review\"><span aria-hidden=\"true\">?</span>Review needed</span>",
+      "css": ".ds-review{display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:4px;padding:4px 8px;font:600 10.5px/1.35 'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--review,#745015);background:#f6eedc}.ds-review>span{font-weight:700}"
+    },
+    {
+      "name": "Project card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The text portion of a bordered project sheet; original diagrams are supplied by diagrams.mjs.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-body\"><h3><a href=\"#/project/deck/brief\">Residential deck</a></h3><p>Fairfax County, VA</p><div class=\"ds-card-footer\"><span>Sample</span><a href=\"#/project/deck/brief\">Open walkthrough</a></div></div></article>",
+      "css": ".ds-card{border:1px solid var(--line,#d9e2e8);border-radius:var(--radius,8px);overflow:hidden;background:white;color:var(--ink,#16324b);font:15px/1.55 'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif}.ds-card-body{padding:21px 23px 0}.ds-card h3{margin:0;font-size:18.75px;font-weight:650;line-height:1.4;letter-spacing:-.02em}.ds-card h3 a{color:var(--ink,#16324b);text-decoration:none}.ds-card h3 a:hover{color:var(--teal-dark,#00645f)}.ds-card p{font-size:12.825px;color:var(--muted,#536777);margin:7px 0 0}.ds-card-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 0 18px;margin-top:17px;border-top:1px solid var(--line,#d9e2e8);font-size:11.4px}.ds-card-footer a{color:var(--teal-dark,#00645f);font-weight:650;text-decoration:none;padding:5px 0}.ds-card-footer a:hover{text-decoration:underline}.ds-card a:focus-visible{outline:3px solid #1a78bb;outline-offset:4px}"
+    },
+    {
+      "name": "Selected strategy",
+      "kind": "card",
+      "description": "Selection uses a teal border and inset accent, not ambient elevation.",
+      "html": "<article class=\"ds-strategy\"><span class=\"ds-selected\">Selected for packet</span><h3>Preferred discussion option</h3><p>Selection adds a discussion option to your packet; it does not change inputs or resolve checks.</p></article>",
+      "css": ".ds-strategy{padding:25px;border:1px solid var(--teal,#007f7a);border-radius:var(--radius,8px);background:white;box-shadow:inset 0 2px 0 var(--teal,#007f7a);color:var(--ink,#16324b);font:15px/1.55 'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif}.ds-selected{display:inline-flex;align-items:center;justify-content:center;gap:5px;border-radius:4px;padding:4px 8px;font-size:10.5px;font-weight:600;line-height:1.35;color:var(--success,#176b51);background:#e5f3ec}.ds-strategy h3{font-size:18px;line-height:1.4;font-weight:650;margin:14px 0 0}.ds-strategy p{color:var(--muted,#536777);font-size:13.2px;margin:9px 0 0;max-width:74ch}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The homeowner's working drawing desk",
+    "overview": "PermitPath is a restrained operational workspace: navy navigation frames a light paper canvas, teal identifies actions, and original SVG blueprint sheets make the project tangible. Its visual authority is the built application, not a generated concept or marketing composition.\n\nCompact system typography, fine dividers and visibly labeled states support scanning and editing. The confirmed direction is task-first and responsive; illustration describes a concept without implying engineering certification or permit approval.",
+    "keyCharacteristics": [
+      "Navy navigation, paper canvas and teal actions.",
+      "Compact system typography with a modest heading ramp.",
+      "Original blueprints presented as labeled working sheets.",
+      "Text-backed statuses and explicit form feedback.",
+      "Responsive navigation and drawing-first mobile editing."
+    ],
+    "rules": [
+      { "name": "The Text-Backed Status Rule", "body": "A check status combines color with its label and a checkmark, exclamation mark or question mark; color alone never explains the result.", "section": "colors" },
+      { "name": "The Keep-the-Task-Visible Rule", "body": "Narrow screens retain labeled navigation and scrollable walkthrough steps; the editor places its live drawing before the form rather than squeezing both into desktop columns.", "section": "layout" },
+      { "name": "The Concept-Not-Certification Rule", "body": "Preserve the drawing's concept label and adjacent limitations: symbolic posts are not engineered spacing, and illustrated fixtures are not a clearance calculation.", "section": "components" }
+    ],
+    "dos": [
+      "**Do** preserve the pinned navy, teal, mint and paper palette.",
+      "**Do** keep system typography, visible keyboard focus and labeled native controls.",
+      "**Do** pair check colors with labels and symbols.",
+      "**Do** keep original blueprints and their concept limitations together.",
+      "**Do** retain responsive sidebar names, scrollable steps and drawing-first mobile editing."
+    ],
+    "donts": [
+      "**Don't** portray a satisfied check or selected strategy as permit approval.",
+      "**Don't** substitute decorative concept art for the original working SVG diagrams.",
+      "**Don't** hide invalid dimensions behind a plausible default drawing."
+    ]
+  }
+}
